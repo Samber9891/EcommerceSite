@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en>
+<head  th:replace="fragments/fragment :: head"></head>
+
+
+<body>
+    <div th:replace="fragments/fragment :: navbar"></div>
+    <main role="main"> 
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Tech Talent Store</h1>
+                <p>This is a small e-commerce application that allows the user to purchase some of a few products that are offered here. </p>
+              <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more &raquo;</a></p>
+          </div>
+      </div>
+      <div class="container">
+        <div class="row">
+              <div class="card" style="width: 18rem;">
+                <img src="https://www.kickmobiles.com/images/thumbs/0008659_apple-iphone-x-a1901-64gb-silver_610.jpeg" class="card-img-top" alt="iPhoneX">
+                <div class="card-body">
+                  <h5 class="card-title">iPhone X</h5>
+                  <p class="card-text">Buy It.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="https://i5.walmartimages.com/asr/1813f03f-29c0-405c-bef7-26134775d7bc_1.54857fbfc564eaa835febd5157e79c6a.jpeg" class="card-img-top" alt="iPhone 8 silver">
+                <div class="card-body">
+                  <h5 class="card-title">iPhone 8 Silver</h5>
+                  <p class="card-text">It's old</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="https://www.lg.com/us/images/tvs/md05792309/gallery/C7_ST_Desktop_Front.jpg" class="card-img-top" alt="LG TV">
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text">Watch the TV</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="https://i.pinimg.com/originals/af/f7/00/aff700f39e57140d314fb017b03b8860.jpg" class="card-img-top" alt="macbook">
+                <div class="card-body">
+                  <h5 class="card-title">Macbook pro 15' with Touchbar</h5>
+                  <p class="card-text">How 'bout that touch bar?</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    </main>
+
+    <footer th:replace="fragments/fragment :: footer"></footer>
+</body>
+</html>
