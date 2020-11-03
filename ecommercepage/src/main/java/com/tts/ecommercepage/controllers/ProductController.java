@@ -2,6 +2,9 @@ package com.tts.ecommercepage.controllers;
 
 import javax.validation.Valid;
 
+import com.tts.ecommercepage.models.Product;
+import com.tts.ecommercepage.services.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +25,7 @@ public class ProductController {
         return "product";
     }
 
-     // TODO: Either implement admin controls or remove these methods.
+     
  
      @RequestMapping(value = "/product", method = {RequestMethod.POST, RequestMethod.PUT})
      public String createOrUpdate(@Valid Product product) {
