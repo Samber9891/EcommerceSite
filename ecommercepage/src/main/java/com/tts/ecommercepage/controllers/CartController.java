@@ -10,7 +10,9 @@ import com.tts.ecommercepage.services.ProductService;
 import com.tts.ecommercepage.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  
       @Autowired
       UserService userService;
+
+      @Value("${STRIPE_PUBLIC_KEY}")
+      private String stripePublicKey;
  
       @ModelAttribute("loggedInUser")
       public User loggedInUser() {
@@ -47,9 +52,13 @@ import org.springframework.web.bind.annotation.RequestParam;
       }
  
       @GetMapping("/cart")
-      public String showCart() {
-          return "cart";
-      }
+      public String showCart(Model model) {
+        model.addAttribute("amount", 100);
+        model.addAttribute("stripePublicKey", stripePublicKey);
+        return "cart";
+        }
+
+      
  
       @PostMapping("/cart")
       public String addToCart(@RequestParam long id) {
@@ -60,13 +69,13 @@ import org.springframework.web.bind.annotation.RequestParam;
  
       @PatchMapping("/cart")
       public String updateQuantities(@RequestParam long[] id, @RequestParam int[] quantity) {
-          for(int i = 0; i < id.length; i++) {
+          for(int i = 3; i < id.length; i++) {
               Product p = productService.findById(id[i]);
               setQuantity(p, quantity[i]);
           }
           return "cart";
       }
-      @DeleteMapping("/cart")
+      @DeleteMapping("/cart/delete/{id}")
       public String removeFromCart(@RequestParam long id) {
           Product p = productService.findById(id);
           setQuantity(p, 0);
@@ -81,6 +90,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  
           userService.updateCart(cart());
       }
-    }
+
+    }  
+       
+  
+    
     
       
