@@ -7,10 +7,10 @@
 <body>
     <div th:replace="fragments/fragment :: navbar"></div>
     <div class="container">
-        <div class="card mb-3 large-product-card"></div>
+        <div class="card mb-3 large-product-card">
             <div class="row no-gutters">
                 <div class="col-md-6">
-                    <img th:alt="${product.name}" th:src="@{${product.image}}" class="card-img" style="max-height: 100%; object-fit: cover;" />
+                    <img th:src="@{${product.imageURL}}" th:alt="${product.name}"  style="width: 100%; max-height: 300px"/>
                 </div>
             <div class="col-md-4">
                 <div class="card-body">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
     <footer th:replace="fragments/fragment :: footer"></footer>
     </div>
 </body>
