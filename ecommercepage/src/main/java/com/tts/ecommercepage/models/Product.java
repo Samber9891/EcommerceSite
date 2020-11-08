@@ -14,7 +14,7 @@ public class Product {
 
     private int quanity; 
 
-    private double price; 
+    private float price; 
 
     private String description; 
 
@@ -24,32 +24,31 @@ public class Product {
 
     private String category; 
     
-    private String image;
+    private String imageURL;
 
-
+   
     public Product() {
     }
 
+    public Product(Long id, int quanity, float price, String description, String name, String brand, String category,
+    String imageURL) {
+this.id = id;
+this.quanity = quanity;
+this.price = price;
+this.description = description;
+this.name = name;
+this.brand = brand;
+this.category = category;
+this.imageURL = imageURL;
+}
 
-    
-    public Product(Long id, int quanity, double price, String description, String name, String brand, String category,
-            String image) {
-        this.id = id;
-        this.quanity = quanity;
-        this.price = price;
-        this.description = description;
-        this.name = name;
-        this.brand = brand;
-        this.category = category;
-        this.image = image;
-    }
 
-    
-    
+
 
     public Long getId() {
         return id;
     }
+
 
     public int getQuanity() {
         return quanity;
@@ -59,11 +58,12 @@ public class Product {
         this.quanity = quanity;
     }
 
-    public double getPrice() {
+   
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -99,19 +99,40 @@ public class Product {
         this.category = category;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     @Override
     public String toString() {
         return "Product [brand=" + brand + ", category=" + category + ", description=" + description + ", id=" + id
-                + ", image=" + image + ", name=" + name + ", price=" + price + ", quanity=" + quanity + "]";
+                + ", imageURL=" + imageURL + ", name=" + name + ", price=" + price + ", quanity=" + quanity + "]";
     }
+
+
+
+   
+
+    
+    
+
+    
+    
+
+	
+    
+    
+
+    
+
+
+    
+
+ 
 
 
     
